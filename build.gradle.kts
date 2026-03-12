@@ -121,6 +121,7 @@ subprojects {
     val loom = project.extensions.getByType<LoomGradleExtensionAPI>()
     loom.apply {
         silentMojangMappingsLicense()
+        enableModProvidedJavadoc.set(false)
         runs.configureEach {
             vmArg("-XX:+AllowEnhancedClassRedefinition")
             vmArg("-XX:+IgnoreUnrecognizedVMOptions")
