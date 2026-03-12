@@ -82,7 +82,7 @@ allprojects {
 
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(17))
+            languageVersion.set(JavaLanguageVersion.of(21))
         }
     }
 
@@ -443,8 +443,10 @@ fun Project.setupRepositories() {
         maven("https://mvn.devos.one/snapshots/") // Create Fabric, Porting Lib, Forge Tags, Milk Lib, Registrate Fabric
         maven("https://mvn.devos.one/releases/") // Porting Lib
         maven("https://maven.cafeteria.dev/releases") // Fake Player API
+        maven("https://maven.createmod.net") // Ponder (Create dependencies)
+        maven("https://maven.saps.dev/releases") // FTB team mods required by Create snapshots
         maven("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/") // forge config api port
-        exclusiveMaven("https://maven.ladysnake.org/releases", "dev.onyxstudios.cardinal-components-api") // Cardinal Components (Hex Casting dependency)
+        exclusiveMaven("https://maven.ladysnake.org/releases", "org.ladysnake.cardinal-components-api") // Cardinal Components API
         maven("https://jitpack.io/") { // Mixin Extras, Fabric ASM
             content {
                 includeGroupByRegex("com.github.*")
