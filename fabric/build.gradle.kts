@@ -42,7 +42,8 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${"fabric_api_version"()}")
 
     // Create - dependencies are added transitively
-    modImplementation("com.simibubi.create:create-fabric-${"minecraft_version"()}:${"create_fabric_version"()}")
+    modImplementation("maven.modrinth:${"create_fabric_artifact"()}:${"create_fabric_version"()}") { isTransitive = false }
+
 
     // Fabric ASM (enum extension etc)
     modImplementation("com.github.Chocohead:Fabric-ASM:v2.3") {
