@@ -10,6 +10,10 @@ pluginManagement {
 
 include("common")
 include("fabric")
-include("forge")
+
+val includeForge = (startParameter.projectProperties["include_forge"] ?: "false").toBoolean()
+if (includeForge) {
+    include("forge")
+}
 
 rootProject.name = "Railway"
